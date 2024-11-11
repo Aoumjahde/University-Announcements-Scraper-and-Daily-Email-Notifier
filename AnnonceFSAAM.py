@@ -4,7 +4,7 @@ import pandas as pd
 import smtplib
 from email.message import EmailMessage
 
-URL = 'http://fsa-am.uiz.ac.ma/announces.rb'
+URL = 'Website URL'
 
 responce = requests.get(URL)
 
@@ -19,7 +19,7 @@ def Announcesment_news():
 
     for _ in zip(Announces_titles, ALL_URLS): 
         body_msg = f'New Annonce: {Announces_titles[0]}\nCheck it Now: {ALL_URLS[0]}'
-        email_alert("Mr. Aziz FSA-AM New Announcement! 😊", body_msg, "oumjahdaziz@gmail.com")
+        email_alert("Mr. Aziz FSA-AM New Announcement! 😊", body_msg, "messageto_who@gmail.com")#email that send msg to
         break
 
 def email_alert(subject, body, to):
@@ -28,9 +28,9 @@ def email_alert(subject, body, to):
     msg['subject'] = subject
     msg['to'] = to
 
-    user = "oumj.aziz@gmail.com"
+    user = "youremail@gmail.com" #email that send msg from
     msg['from'] = user
-    email_pss = "zwrtjyyljrlokusm"
+    email_pss = "Email_AppKey"
 
     # Initialize the server
     server = smtplib.SMTP("smtp.gmail.com", 587)
